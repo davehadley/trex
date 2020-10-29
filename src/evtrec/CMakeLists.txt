@@ -28,8 +28,7 @@ root_generate_dictionary(G__GasTPCEvtRec ${EVTREC_HDRS} LINKDEF LinkDef.h)
 
 add_library(GasTPCEvtRec SHARED ${EVTREC_SRCS} G__GasTPCEvtRec.cxx)
 
-target_link_libraries(GasTPCEvtRec ${ROOT_LIBRARIES} ${GENIE_LIBRARIES}
-                      ${LIBXML2_LIBRARIES} ${Log4cpp_LIBRARIES})
+target_link_libraries(GasTPCEvtRec ${ROOT_LIBRARIES})
 
 install(
   TARGETS GasTPCEvtRec
