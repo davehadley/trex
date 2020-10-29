@@ -1,0 +1,15 @@
+.gitignore
+*.o
+*.so
+*.exe
+*Dict.cxx
+*.pcm
+*~
+*.root
+*.png
+*#
+
+*.d
+
+notused/*
+output/*
