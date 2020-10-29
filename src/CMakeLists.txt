@@ -1,5 +1,5 @@
 list(APPEND CMAKE_PREFIX_PATH $ENV{ROOTSYS})
-find_package(ROOT 6.15 REQUIRED COMPONENTS RIO Net Tree MathCore)
+find_package(ROOT 6.15 REQUIRED COMPONENTS RIO Net Tree MathCore Minuit)
 include(${ROOT_USE_FILE})
 
 root_generate_dictionary(
@@ -43,7 +43,15 @@ add_library(
   TTRExPath.cxx
   TTRExJunction.cxx
   TTRExPIDAlgorithm.cxx
-  TTrueTrack.cxx)
+  TTrueTrack.cxx
+  TSimLoaderND.cxx
+  GasTPCDataLib.cxx)
+
+add_subdirectory(evtrec)
 
 add_executable(RunTRExReconCCD.exe RunTRExReconCCD.cxx)
 target_link_libraries(RunTRExReconCCD.exe libpatrec ${ROOT_LIBRARIES})
+
+add_executable(RunTRExReconND.exe RunTRExReconND.cxx)
+target_link_libraries(RunTRExReconND.exe libpatrec GasTPCEvtRec
+                      ${ROOT_LIBRARIES})

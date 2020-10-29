@@ -22,6 +22,8 @@ set(EVTREC_SRCS
     RootFileReader.cxx
     RootFileWriter.cxx)
 
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
+
 root_generate_dictionary(G__GasTPCEvtRec ${EVTREC_HDRS} LINKDEF LinkDef.h)
 
 add_library(GasTPCEvtRec SHARED ${EVTREC_SRCS} G__GasTPCEvtRec.cxx)
