@@ -14,7 +14,7 @@ root_generate_dictionary(
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_library(
-  libpatrec
+  patrec
   TTPCAStar.cxx
   TTPCHitPad.cxx
   TTPCLayout.cxx
@@ -50,8 +50,7 @@ add_library(
 add_subdirectory(evtrec)
 
 add_executable(RunTRExReconCCD.exe RunTRExReconCCD.cxx)
-target_link_libraries(RunTRExReconCCD.exe libpatrec ${ROOT_LIBRARIES})
+target_link_libraries(RunTRExReconCCD.exe patrec ${ROOT_LIBRARIES})
 
 add_executable(RunTRExReconND.exe RunTRExReconND.cxx)
-target_link_libraries(RunTRExReconND.exe libpatrec GasTPCEvtRec
-                      ${ROOT_LIBRARIES})
+target_link_libraries(RunTRExReconND.exe patrec GasTPCEvtRec ${ROOT_LIBRARIES})
