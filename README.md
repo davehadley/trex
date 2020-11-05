@@ -12,7 +12,8 @@ It is recommended to build with `conda`.
 ```
 conda env create -f environment.yml
 conda activate trex
-cd src && make
+mkdir build && cd build
+cmake ../ && make
 ```
 
 # Run Instructions
